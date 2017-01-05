@@ -1,4 +1,30 @@
 //sample data modified from randomUser.me
+function getUserData() {
+  return new Promise(function(resolve, reject) {
+    $.ajax({
+      url: 'https://randomuser.me/api/',
+      dataType: 'json',
+    })
+    .done(function(data) {
+      resolve(data)
+    })
+  })
+}
+
+getUserData()
+  .then(function(val) {
+    randomUser = val
+
+    console.dir(randomUser)
+
+    var template = $('#myTemplate').html()
+    var templateCompiled = Handlebars.compile(template)
+    var output = templateCompiled(randomUser)
+    $('#user2').append(output)
+
+
+  })
+
 var randomUser = {
   "results": [
     {
