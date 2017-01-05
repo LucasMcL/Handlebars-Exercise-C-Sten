@@ -7,11 +7,50 @@
   <link rel="stylesheet" href="main.css">
 </head>
 <body>
-  <h1>Here's a random user</h1>
+  <h1>Dating Website</h1>
 
 <!-- output div -->
-<div id="user"></div>
-<div id="user2"></div>
+<div class="container">
+	<div class="row">
+		<div id="options" class="col-md-4 col-md-offset-1">
+			<h2>I am...</h2>
+			<select name="userGender" id="userGender">
+				<option value="select">Select</option>
+				<option value="male">Male</option>
+				<option value="female">Female</option>
+			</select>
+			<h2>seeking...</h2>
+			<select name="seekingGender" id="seekingGender">
+				<option value="select">Select</option>
+				<option value="male">Male</option>
+				<option value="female">Female</option>
+			</select>
+			<h2>located in...</h2>
+			<select name="country" id="country">
+			 <!-- AU, BR, CA, CH, DE, DK, ES, FI, FR, GB, IE, IR, NL, NZ, TR, US -->
+				<option value="select">Select</option>
+				<option value="au">Australia</option>
+				<option value="br">Brazil</option>
+				<option value="ca">Canada</option>
+				<option value="dk">Denmark</option>
+				<option value="fi">Finland</option>
+				<option value="fr">France</option>
+				<option value="de">Germany</option>
+				<option value="ie">Ireland</option>
+				<option value="ir">Iran</option>
+				<option value="nl">Netherlands</option>
+				<option value="nz">New Zealand</option>
+				<option value="es">Spain</option>
+				<option value="ch">Switzerland</option>
+				<option value="tr">Turkey</option>
+				<option value="gb">United Kingdom</option>
+				<option value="us">United States</option>
+			</select>
+			<button id="findMatch" class="btn btn-primary"> Find me a match! </button>
+		</div>
+		<div id="match" class="col-md-6 col-md-offset-1"></div>
+	</div>
+</div>
 
 
 <!-- handlebar template -->
@@ -19,6 +58,7 @@
 	<h2 class="text-center">{{results.0.name.title}} {{results.0.name.first}} {{results.0.name.last}}</h2>
 	<img src="{{results.0.picture.medium}}" alt="">
 	<p>Gender: {{results.0.gender}}</p>
+	<p>DOB: {{results.0.dob}}</p>
 	<p>Email: {{results.0.email}}</p>
 	<p>Location: {{results.0.location.street}}, {{results.0.location.city}}, {{results.0.location.state}} {{results.0.location.postcode}}</p>
 	<p>Nationality: {{results.0.nat}}</p>
