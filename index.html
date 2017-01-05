@@ -3,14 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <title>Handlebars Exercise</title>
+  <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="main.css">
 </head>
 <body>
   <h1>Here's a random user</h1>
 
 <!-- output div -->
+<div id="user"></div>
 
+
+<!-- handlebar template -->
+<script type="text/x-handlebars-template" id="myTemplate">
+	<h2 class="text-center">{{results.0.name.title}} {{results.0.name.first}} {{results.0.name.last}}</h2>
+	<img src="{{results.0.picture.medium}}" alt="">
+	<p>Gender: {{results.0.gender}}</p>
+	<p>Email: {{results.0.email}}</p>
+	<p>Location: {{results.0.location.street}}, {{results.0.location.city}}, {{results.0.location.state}} {{results.0.location.postcode}}</p>
+	<p>Nationality: {{results.0.nat}}</p>
+</script>
+
+<!-- jQuery script -->
+<script src="/bower_components/jquery/dist/jquery.js"></script>
+<!-- bootstrap script -->
+<script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
 <!-- handlebars script -->
-
+<script src="/bower_components/handlebars/handlebars.js"></script>
 <!-- regular javascript scripts -->
+<script src="myJavascript.js"></script>
 </body>
 </html>
